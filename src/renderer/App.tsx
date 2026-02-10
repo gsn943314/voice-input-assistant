@@ -322,6 +322,7 @@ const App: React.FC = () => {
             </svg>
             <span className="font-medium">{toastMessage}</span>
           </div>
+        </div>
       )}
       
       <div className="h-screen flex flex-col bg-gradient-to-br from-gray-900 to-gray-800 text-white overflow-hidden">
