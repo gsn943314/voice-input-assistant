@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Settings Debug Tool</h1>
+    
+    <div class="section">
+        <h2>1. Check ElectronAPI</h2>
+        <button onclick="checkAPI()">Check API</button>
+        <div id="api-result"></div>
+    </div>
+
+    <div class="section">
+        <h2>2. Load Settings</h2>
+        <button onclick="loadSettings()">Load Settings</button>
+        <div id="load-result"></div>
+    </div>
+
+    <div class="section">
+        <h2>3. Save Settings</h2>
+        <input type="text" id="apiKey" placeholder="Enter API Key (sk-...)">
+        <button onclick="saveSettings()">Save Settings</button>
+        <div id="save-result"></div>
+    </div>
+
+    <div class="section">
+        <h2>4. Test Full Flow</h2>
+        <button onclick="testFullFlow()">Test Full Flow</button>
+        <div id="flow-result"></div>
+    </div>
+
+    <script>
+        function checkAPI() {
+            const result = document.getElementById('api-result');
+            if (window.electronAPI) {
+                result.innerHTML = '<p class="success">✓ electronAPI is available</p>';
+                result.innerHTML += '<pre>' + JSON.stringify(Object.keys(window.electronAPI), null, 2) + '</pre>';
+            } else {
+                result.innerHTML = '<p class="error">✗ electronAPI is NOT available</p>';
+            }
+        }
+
+        async function loadSettings() {
+            const result = document.getElementById('load-result');
+            try {
+                result.innerHTML = '<p>Loading...</p>';
+                const settings = await window.electronAPI.loadSettings();
+                result.innerHTML = '<p class="success">✓ Settings loaded successfully</p>';
+                result.innerHTML += '<pre>' + JSON.stringify(settings, null, 2) + '</pre>';
+            } catch (error) {
+                result.innerHTML = '<p class="error">✗ Error: ' + error.message + '</p>';
+                console.error('Load error:', error);
+            }
+        }
+
+        async function saveSettings() {
+            const result = document.getElementById('save-result');
+            const apiKey = document.getElementById('apiKey').value;
+            
+            if (!apiKey) {
+                result.innerHTML = '<p class="error">Please enter an API key</p>';
+                return;
+            }
+
+            try {
+                result.innerHTML = '<p>Saving...</p>';
+                
+                const settings = {
+                    apiKey: apiKey,
+                    defaultLanguage: 'zh',
+                    shortcuts: {
+                        startRecording: 'CommandOrControl+Shift+R',
+                        stopRecording: 'CommandOrControl+Shift+S'
+                    },
+                    windowOpacity: 0.95,
+                    historyLimit: 50
+                };
+
+                await window.electronAPI.saveSettings(settings);
+                result.innerHTML = '<p class="success">✓ Settings saved successfully</p>';
+                result.innerHTML += '<pre>' + JSON.stringify(settings, null, 2) + '</pre>';
+            } catch (error) {
+                result.innerHTML = '<p class="error">✗ Error: ' + error.message + '</p>';
+                console.error('Save error:', error);
+            }
+        }
+
+        async function testFullFlow() {
+            const result = document.getElementById('flow-result');
+            result.innerHTML = '<p>Testing...</p>';
+
+            try {
+                // Step 1: Load initial settings
+                result.innerHTML += '<p>1. Loading initial settings...</p>';
+                const initialSettings = await window.electronAPI.loadSettings();
+                result.innerHTML += '<p class="success">✓ Initial settings loaded</p>';
+
+                // Step 2: Save new settings
+                result.innerHTML += '<p>2. Saving test settings...</p>';
+                const testSettings = {
+                    apiKey: 'sk-test-key-1234567890',
+                    defaultLanguage: 'en',
+                    shortcuts: {
+                        startRecording: 'CommandOrControl+Shift+R',
+                        stopRecording: 'CommandOrControl+Shift+S'
+                    },
+                    windowOpacity: 0.90,
+                    historyLimit: 30
+                };
+                await window.electronAPI.saveSettings(testSettings);
+                result.innerHTML += '<p class="success">✓ Test settings saved</p>';
+
+                // Step 3: Load saved settings
+                result.innerHTML += '<p>3. Loading saved settings...</p>';
+                const savedSettings = await window.electronAPI.loadSettings();
+                result.innerHTML += '<p class="success">✓ Saved settings loaded</p>';
+
+                // Step 4: Verify
+                result.innerHTML += '<p>4. Verifying...</p>';
+                if (savedSettings.defaultLanguage === 'en' && savedSettings.historyLimit === 30) {
+                    result.innerHTML += '<p class="success">✓ All tests passed!</p>';
+                } else {
+                    result.innerHTML += '<p class="error">✗ Settings mismatch</p>';
+                }
+
+                result.innerHTML += '<h3>Saved Settings:</h3>';
+                result.innerHTML += '<pre>' + JSON.stringify(savedSettings, null, 2) + '</pre>';
+
+            } catch (error) {
+                result.innerHTML += '<p class="error">✗ Error: ' + error.message + '</p>';
+                console.error('Test error:', error);
+            }
+        }
+
+        // Auto-check API on load
+        window.addEventListener('DOMContentLoaded', () => {
+            checkAPI();
+        });
+    </script>
+</body>
+</html>
