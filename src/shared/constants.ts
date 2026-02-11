@@ -24,7 +24,7 @@ export const DEFAULT_SETTINGS = {
     copyText: 'CommandOrControl+Shift+C',
     clearText: 'CommandOrControl+Shift+X',
   },
-  windowOpacity: 0.95,
+  windowOpacity: 1.0,
   historyLimit: 50,
   openDevTools: false,  // 默認不開啟開發者工具
 };

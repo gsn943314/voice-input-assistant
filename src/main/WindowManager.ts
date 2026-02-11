@@ -44,6 +44,7 @@ export class WindowManager {
       frame: config.frame,
       transparent: config.transparent,
       resizable: config.resizable,
+      opacity: 1.0, // Set initial opacity to 100% (fully opaque)
       webPreferences: {
         nodeIntegration: false,
         contextIsolation: true,
@@ -85,6 +86,7 @@ export class WindowManager {
       // Clamp opacity between 0.5 and 1.0
       const clampedOpacity = Math.max(0.5, Math.min(1.0, opacity));
       this.window.setOpacity(clampedOpacity);
+      console.log(`Window opacity set to: ${clampedOpacity}`);
     }
   }
 

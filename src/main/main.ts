@@ -19,9 +19,19 @@ function createWindow() {
     height: 600,
     alwaysOnTop: true,
     frame: false,
-    transparent: true,
+    transparent: false,  // 關閉透明，使用不透明視窗
     resizable: true,
   });
+
+  // Load settings and apply window opacity
+  try {
+    const settings = settingsManager.load();
+    console.log('Loaded settings:', { windowOpacity: settings.windowOpacity });
+    windowManager.setOpacity(settings.windowOpacity);
+  } catch (error) {
+    console.error('Failed to load settings, using default opacity:', error);
+    windowManager.setOpacity(1.0); // Fallback to fully opaque
+  }
 
   // Load the app
   if (process.env.NODE_ENV === 'development' || !app.isPackaged) {
@@ -30,12 +40,18 @@ function createWindow() {
     window.loadURL(`http://localhost:${devPort}`);
     
     // Only open DevTools if enabled in settings
-    const settings = settingsManager.load();
-    if (settings.openDevTools) {
-      window.webContents.openDevTools();
+    try {
+      const settings = settingsManager.load();
+      if (settings.openDevTools) {
+        window.webContents.openDevTools();
+      }
+    } catch (error) {
+      console.error('Failed to check DevTools setting:', error);
     }
   } else {
-    window.loadFile(path.join(__dirname, '../renderer/index.html'));
+    // In production, load from the packaged files
+    // Path is relative to dist/main/main/main.js
+    window.loadFile(path.join(__dirname, '../../renderer/index.html'));
   }
 }
 
