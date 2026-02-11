@@ -16,7 +16,7 @@ export interface AppSettings {
 }
 
 export interface TranscriptionRequest {
-  audioBlob: Buffer;
+  audioBlob: Buffer | number[];  // Support both Buffer (main process) and number[] (renderer process)
   language?: string;
 }
 

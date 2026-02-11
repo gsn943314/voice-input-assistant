@@ -60,6 +60,10 @@ const App: React.FC = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [settings, setSettings] = useState<AppSettings | null>(null);
   
+  // Toast notification state
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  
   // UI Language state
   const [uiLanguage, setUILanguage] = useState<Language>('zh');
   const t = getTranslations(uiLanguage);
@@ -414,25 +418,6 @@ const App: React.FC = () => {
           onClose={() => setIsSettingsOpen(false)}
           onSave={handleSaveSettings}
         />
-          </>
-        ) : (
-          /* Collapsed Icon State */
-          <div className="w-16 h-16 flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl shadow-lg cursor-pointer hover:scale-110 transition-transform">
-            <svg
-              className="w-8 h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-              />
-            </svg>
-          </div>
-        )}
       </div>
     </AppContext.Provider>
   );

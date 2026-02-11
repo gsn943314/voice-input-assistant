@@ -1,68 +1,170 @@
-# 🚀 快速開始指南
+# VoiceInput 快速安装指南
 
-5 分鐘內開始使用 VoiceInput！
+## 📦 下载安装包
 
-## 📥 安裝（3 種方式選一種）
+从 GitHub Releases 页面下载以下文件之一：
 
-### 方式 A：下載安裝（最簡單）✨
+### 推荐：DMG 安装包（适合 Apple Silicon Mac）
+- **VoiceInput-1.0.0-arm64.dmg** (92MB)
+- 适用于 M1/M2/M3 芯片的 Mac
 
-1. 下載 [VoiceInput.dmg](https://github.com/YOUR_USERNAME/voice-input-assistant/releases)
-2. 拖曳到 Applications 資料夾
-3. 完成！
-
-### 方式 B：從源碼安裝
-
-```bash
-git clone https://github.com/YOUR_USERNAME/voice-input-assistant.git
-cd voice-input-assistant
-npm install
-npm run build
-npm run package:mac
-# 安裝 release/VoiceInput-x.x.x.dmg
-```
-
-### 方式 C：開發模式
-
-```bash
-git clone https://github.com/YOUR_USERNAME/voice-input-assistant.git
-cd voice-input-assistant
-npm install
-npm run dev
-```
-
-## 🔑 設定 API Key
-
-1. 取得 OpenAI API Key：https://platform.openai.com/api-keys
-2. 開啟 VoiceInput → 點擊 ⚙️
-3. 貼上 API Key
-4. 點擊「儲存」
-
-## 🎤 開始使用
-
-1. 點擊 🎤 或按 `Cmd+Shift+R`
-2. 說話
-3. 點擊 ⏹️ 或按 `Cmd+Shift+S`
-4. 點擊 📋 複製文字
-
-## 💡 快捷鍵
-
-- `Cmd+Shift+R` - 開始錄音
-- `Cmd+Shift+S` - 停止錄音
-- 可在設定中自訂
-
-## 📚 詳細文件
-
-- [完整安裝指南](INSTALLATION.md)
-- [使用手冊](README.md)
-- [故障排除](故障排除.md)
-
-## ❓ 遇到問題？
-
-1. 檢查麥克風權限：系統偏好設定 → 安全性與隱私權 → 麥克風
-2. 確認 API Key 正確
-3. 查看 [常見問題](INSTALLATION.md#常見問題)
-4. [提出 Issue](https://github.com/YOUR_USERNAME/voice-input-assistant/issues)
+### 备选：ZIP 压缩包
+- **VoiceInput-1.0.0-arm64-mac.zip** (89MB)
+- 解压后直接使用
 
 ---
 
-**就這麼簡單！開始享受語音轉文字吧！** 🎉
+## 🚀 安装步骤
+
+### 方法一：使用 DMG 安装包（推荐）
+
+1. **下载 DMG 文件**
+   - 下载 `VoiceInput-1.0.0-arm64.dmg`
+
+2. **打开 DMG 文件**
+   - 双击下载的 DMG 文件
+   - 会弹出一个安装窗口
+
+3. **拖拽安装**
+   - 将 `VoiceInput.app` 拖拽到 `Applications` 文件夹
+   - 等待复制完成
+
+4. **启动应用**
+   - 打开 `应用程序` 文件夹
+   - 双击 `VoiceInput` 图标
+   - 首次打开可能需要右键点击 → 打开（绕过安全检查）
+
+### 方法二：使用 ZIP 压缩包
+
+1. **下载并解压**
+   - 下载 `VoiceInput-1.0.0-arm64-mac.zip`
+   - 双击解压
+
+2. **移动到应用程序文件夹**
+   - 将解压出的 `VoiceInput.app` 移动到 `/Applications` 文件夹
+
+3. **启动应用**
+   - 打开 `应用程序` 文件夹
+   - 双击 `VoiceInput` 图标
+   - 首次打开可能需要右键点击 → 打开
+
+---
+
+## ⚙️ 首次使用配置
+
+### 1. 授予麦克风权限
+首次启动时，macOS 会询问是否允许访问麦克风：
+- 点击 **允许**
+- 如果不小心拒绝了，可以在 `系统设置 → 隐私与安全性 → 麦克风` 中手动开启
+
+### 2. 配置 OpenAI API 密钥
+1. 点击应用中的 **设置** 按钮（齿轮图标）
+2. 在 **API 密钥** 栏位输入你的 OpenAI API 密钥
+   - 格式：`sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+   - 如何获取：访问 [OpenAI API Keys](https://platform.openai.com/api-keys)
+3. 选择默认语言（中文或英文）
+4. 点击 **保存设置**
+
+### 3. 开始使用
+- 点击 **开始录音** 按钮（或使用快捷键 `Cmd+Shift+R`）
+- 说话
+- 点击 **停止录音** 按钮（或使用快捷键 `Cmd+Shift+S`）
+- 等待转录完成
+- 点击 **复制** 按钮将文字复制到剪贴板
+
+---
+
+## 🔧 常见问题
+
+### 无法打开应用（"无法验证开发者"）
+
+**解决方法：**
+1. 右键点击 `VoiceInput.app`
+2. 选择 **打开**
+3. 在弹出的对话框中点击 **打开**
+4. 或者在终端执行：
+   ```bash
+   xattr -cr /Applications/VoiceInput.app
+   ```
+
+### 麦克风无法使用
+
+**解决方法：**
+1. 打开 `系统设置`
+2. 进入 `隐私与安全性` → `麦克风`
+3. 确保 `VoiceInput` 已勾选
+
+### API 密钥无效
+
+**检查清单：**
+- 密钥格式正确（以 `sk-` 开头）
+- 密钥长度足够（至少 20 个字符）
+- OpenAI 账户有余额
+- 网络连接正常
+
+---
+
+## 🎮 快捷键
+
+| 功能 | 默认快捷键 | 说明 |
+|------|-----------|------|
+| 开始录音 | `Cmd+Shift+R` | 开始语音录制 |
+| 停止录音 | `Cmd+Shift+S` | 停止录制并转录 |
+| 复制文字 | `Cmd+C` | 复制转录文字 |
+| 清空文字 | `Cmd+K` | 清空当前文字 |
+
+可在设置中自定义快捷键。
+
+---
+
+## 💡 使用技巧
+
+1. **浮动窗口**
+   - 应用始终保持在最上层
+   - 可以拖拽移动位置
+   - 可以调整窗口大小
+
+2. **透明度调整**
+   - 在设置中调整窗口透明度（50%-100%）
+   - 适应不同工作场景
+
+3. **历史记录**
+   - 自动保存最近的转录记录
+   - 点击历史项目快速重新加载
+   - 可设置保存数量限制
+
+4. **多语言支持**
+   - 支持中文和英文界面
+   - 支持中文和英文语音识别
+   - 在设置中切换
+
+---
+
+## 📊 系统要求
+
+- **操作系统**: macOS 10.15 (Catalina) 或更新版本
+- **芯片**: Apple Silicon (M1/M2/M3)
+- **内存**: 至少 4GB RAM
+- **网络**: 需要互联网连接（调用 OpenAI API）
+- **其他**: 麦克风、OpenAI API 密钥
+
+---
+
+## 💰 费用说明
+
+- **应用程序**: 完全免费
+- **OpenAI API**: 按使用量计费
+  - Whisper API: $0.006 / 分钟
+  - 示例：100 分钟转录 ≈ $0.60
+
+---
+
+## 🆘 需要帮助？
+
+- 📖 [完整文档](README.md)
+- 🐛 [报告问题](https://github.com/YOUR_USERNAME/voice-input-assistant/issues)
+- 💬 [讨论区](https://github.com/YOUR_USERNAME/voice-input-assistant/discussions)
+
+---
+
+**享受语音转文字的便利！** 🎤✨

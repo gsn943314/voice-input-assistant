@@ -11,6 +11,10 @@
 [![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 
+### 📥 [下载最新版本 (Download Latest Release)](../../releases/latest)
+
+**快速安装**: 下载 DMG 文件 → 拖拽到应用程序文件夹 → 双击打开 → 开始使用！
+
 </div>
 
 ## ✨ Features
