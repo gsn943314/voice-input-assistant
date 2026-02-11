@@ -1,6 +1,6 @@
 # VoiceInput Documentation Index
 
-## 📚 All Documentation (English)
+## 📚 All Documentation
 
 ### Getting Started
 - **[README.md](README.md)** - Main documentation, features, and overview
@@ -13,28 +13,12 @@
 
 ### For Developers
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute to the project
+- **[PACKAGING.md](PACKAGING.md)** - Packaging instructions
 - **[GITHUB_RELEASE_DESCRIPTION.md](GITHUB_RELEASE_DESCRIPTION.md)** - Template for GitHub releases
 
----
-
-## 🌏 中文文件 (Chinese Documentation)
-
-### 安全警告解決
-- **[macOS安全警告解決方案.md](macOS安全警告解決方案.md)** - macOS 安全警告詳細解決方案
-- **[給用戶的重要提示.md](給用戶的重要提示.md)** - 簡短的安全警告說明
-- **[修復安全警告.sh](修復安全警告.sh)** - 自動修復腳本
-
-### 發布指南
-- **[GitHub-Release-描述.md](GitHub-Release-描述.md)** - GitHub Release 描述模板
-- **[Release上傳檢查清單.md](Release上傳檢查清單.md)** - 發布前檢查清單
-- **[如何發布到GitHub.md](如何發布到GitHub.md)** - 完整發布指南
-- **[上傳到GitHub-Release指南.md](上傳到GitHub-Release指南.md)** - 上傳步驟
-
-### 其他文件
-- **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - 版本發布說明
-- **[透明度問題修復說明.md](透明度問題修復說明.md)** - 透明度問題修復記錄
-- **[測試DMG問題.md](測試DMG問題.md)** - DMG 問題排查
-- **[故障排除.md](故障排除.md)** - 故障排除指南
+### Release Information
+- **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - Version release notes
+- **[FINAL_SUMMARY.md](FINAL_SUMMARY.md)** - Documentation conversion summary
 
 ---
 
