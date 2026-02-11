@@ -1,101 +1,105 @@
-# VoiceInput 安裝指南
+# VoiceInput Installation Guide
 
-## 📦 下載
+## 📦 Download
 
-從 [GitHub Releases](https://github.com/YOUR_USERNAME/voice-input-assistant/releases) 下載最新版本：
+Download the latest version from [GitHub Releases](https://github.com/gsn943314/voice-input-assistant/releases):
 
-- **VoiceInput-1.0.0-universal.dmg** (推薦)
-- **VoiceInput-1.0.0-universal-mac.zip** (備選)
+- **VoiceInput-1.0.0-universal.dmg** (Recommended)
+- **VoiceInput-1.0.0-universal-mac.zip** (Alternative)
 
-## 🔧 安裝步驟
+## 🔧 Installation Steps
 
-### 方法 1：使用 DMG 安裝檔（推薦）
+### Method 1: Using DMG Installer (Recommended)
 
-1. 下載 `VoiceInput-1.0.0-universal.dmg`
-2. 雙擊 DMG 檔案打開
-3. 將 VoiceInput.app 拖曳到 Applications 資料夾
-4. 彈出 DMG 映像檔
-5. 從 Applications 資料夾或 Launchpad 啟動 VoiceInput
+1. Download `VoiceInput-1.0.0-universal.dmg`
+2. Double-click the DMG file to open
+3. Drag VoiceInput.app to the Applications folder
+4. Eject the DMG image
+5. Launch VoiceInput from Applications or Launchpad
 
-### 方法 2：使用 ZIP 壓縮檔
+### Method 2: Using ZIP Archive
 
-1. 下載 `VoiceInput-1.0.0-universal-mac.zip`
-2. 解壓縮 ZIP 檔案
-3. 將 VoiceInput.app 移動到 Applications 資料夾
-4. 從 Applications 資料夾或 Launchpad 啟動 VoiceInput
+1. Download `VoiceInput-1.0.0-universal-mac.zip`
+2. Extract the ZIP file
+3. Move VoiceInput.app to the Applications folder
+4. Launch VoiceInput from Applications or Launchpad
 
-## 🔐 首次啟動
+## 🔐 First Launch
 
-### macOS 安全性提示
+### macOS Security Warning
 
-首次啟動時，macOS 可能會顯示安全性警告，因為應用程式未經 Apple 公證。
+On first launch, macOS will display a security warning because the app is not notarized by Apple.
 
-**解決方法：**
+**Solution (choose one):**
 
-1. 右鍵點擊 VoiceInput.app
-2. 選擇「打開」
-3. 在彈出的對話框中點擊「打開」
+#### Method 1: Right-Click to Open (Recommended)
 
-或者：
+1. **Don't** double-click VoiceInput.app
+2. **Right-click** on VoiceInput.app
+3. Select "**Open**"
+4. Click "**Open**" in the confirmation dialog
 
-1. 打開「系統偏好設定」→「安全性與隱私權」
-2. 在「一般」標籤頁中，點擊「仍要打開」
+#### Method 2: Using Terminal
 
-### 麥克風權限
+```bash
+xattr -cr /Applications/VoiceInput.app
+open /Applications/VoiceInput.app
+```
 
-首次使用錄音功能時，macOS 會要求授予麥克風權限：
+#### Method 3: System Preferences
 
-1. 點擊「好」授予權限
-2. 如果不小心拒絕，可以在「系統偏好設定」→「安全性與隱私權」→「麥克風」中手動啟用
+1. Try to open the app (it will be blocked)
+2. Open "System Preferences" → "Security & Privacy"
+3. In the "General" tab, click "**Open Anyway**"
 
-## ⚙️ 初始設定
+## ⚙️ Initial Setup
 
-1. 啟動 VoiceInput
-2. 點擊設定按鈕（齒輪圖示）
-3. 輸入你的 OpenAI API 金鑰
-4. 選擇預設語言（中文或英文）
-5. 自訂其他設定（可選）
-6. 點擊「儲存」
+1. Launch VoiceInput
+2. Click the settings button (gear icon)
+3. Enter your OpenAI API key
+4. Select default language (Chinese or English)
+5. Customize other settings (optional)
+6. Click "Save"
 
-## 🎤 開始使用
+## 🎤 Getting Started
 
-1. 點擊麥克風按鈕開始錄音
-2. 說話
-3. 再次點擊按鈕停止錄音
-4. 等待轉錄完成
-5. 點擊複製按鈕複製文字
+1. Click the microphone button to start recording
+2. Speak
+3. Click the button again to stop recording
+4. Wait for transcription to complete
+5. Click the copy button to copy text
 
-## 🔧 故障排除
+## 🔧 Troubleshooting
 
-### 應用程式無法啟動
+### App Won't Launch
 
-- 確認你的 macOS 版本是 10.15 或更新
-- 檢查是否已授予必要的權限
-- 嘗試重新安裝應用程式
+- Confirm your macOS version is 10.15 or later
+- Check if necessary permissions are granted
+- Try reinstalling the app
 
-### 無法錄音
+### Can't Record
 
-- 檢查麥克風權限
-- 確認麥克風正常工作
-- 重新啟動應用程式
+- Check microphone permissions
+- Confirm microphone is working
+- Restart the app
 
-### 轉錄失敗
+### Transcription Failed
 
-- 檢查 API 金鑰是否正確
-- 確認網路連線正常
-- 檢查 OpenAI API 額度
+- Verify API key is correct
+- Check internet connection
+- Verify OpenAI API credits
 
-## 🗑️ 解除安裝
+## 🗑️ Uninstallation
 
-1. 關閉 VoiceInput
-2. 從 Applications 資料夾刪除 VoiceInput.app
-3. （可選）刪除設定檔：
+1. Close VoiceInput
+2. Delete VoiceInput.app from Applications folder
+3. (Optional) Delete settings file:
    ```bash
    rm -rf ~/Library/Application\ Support/voice-input-app
    ```
 
-## 📞 需要幫助？
+## 📞 Need Help?
 
-- 查看 [故障排除文件](故障排除.md)
-- [回報問題](https://github.com/YOUR_USERNAME/voice-input-assistant/issues)
-- [查看常見問題](https://github.com/YOUR_USERNAME/voice-input-assistant/wiki/FAQ)
+- Check [Security Warning Solution](SECURITY_WARNING_SOLUTION.md)
+- [Report Issue](https://github.com/gsn943314/voice-input-assistant/issues)
+- [View Documentation](README.md)

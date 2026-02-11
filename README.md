@@ -46,7 +46,18 @@
 1. Download the latest `VoiceInput-x.x.x.dmg` from [Releases](../../releases)
 2. Open the DMG file
 3. Drag VoiceInput to your Applications folder
-4. Launch VoiceInput from Applications
+4. **Important: Right-click to open for the first time** (see below)
+
+##### ⚠️ macOS Security Warning
+
+On first launch, macOS will show a security warning. This is normal!
+
+**Solution:**
+1. **Right-click** on VoiceInput.app
+2. Select "**Open**"
+3. Click "**Open**" in the confirmation dialog
+
+**Detailed guide:** [SECURITY_WARNING_SOLUTION.md](SECURITY_WARNING_SOLUTION.md)
 
 #### Option 2: Build from Source
 
@@ -260,12 +271,21 @@ Settings are stored in:
 
 ### App Won't Open
 
-**Problem**: "App is damaged and can't be opened"
+**Problem**: "App is damaged and can't be opened" or security warning
 
 **Solution** (for unsigned builds):
+
+**Method 1: Right-click to open (Recommended)**
+1. Right-click on VoiceInput.app
+2. Select "Open"
+3. Click "Open" in the confirmation dialog
+
+**Method 2: Terminal command**
 ```bash
 xattr -cr /Applications/VoiceInput.app
 ```
+
+**See detailed guide:** [SECURITY_WARNING_SOLUTION.md](SECURITY_WARNING_SOLUTION.md)
 
 ### High Memory Usage
 

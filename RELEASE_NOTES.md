@@ -1,131 +1,143 @@
 # VoiceInput v1.0.0 Release Notes
 
-## 🎉 首次發布！
+## 🎉 Initial Release!
 
-歡迎使用 VoiceInput - 一個優雅的 macOS 浮動視窗語音轉文字應用程式！
+Welcome to VoiceInput - an elegant macOS floating window app for voice-to-text conversion!
 
-## ✨ 主要功能
+## ✨ Key Features
 
-### 🎤 語音轉文字
-- 使用 OpenAI Whisper API 提供高品質語音識別
-- 支援中文和英文語音識別
-- 即時錄音和轉錄
-- 一鍵複製轉錄結果
+### 🎤 Voice-to-Text
+- High-quality speech recognition powered by OpenAI Whisper API
+- Support for Chinese and English recognition
+- Real-time recording and transcription
+- One-click copy to clipboard
 
-### 🪟 浮動視窗設計
-- 始終保持在最上層，不干擾其他工作
-- 可調整視窗透明度（50%-100%）
-- 簡潔現代的 UI 設計
-- 支援拖曳移動和調整大小
+### 🪟 Floating Window Design
+- Always stays on top, doesn't interfere with other work
+- Adjustable window opacity (50%-100%)
+- Clean and modern UI design
+- Supports drag to move and resize
 
-### 🌐 多語言介面
-- 完整的中英文介面切換
-- 即時預覽語言變更
-- 所有 UI 元素都支援多語言
+### 🌐 Multi-Language Interface
+- Complete Chinese and English interface switching
+- Real-time language preview
+- All UI elements support multiple languages
 
-### ⚙️ 豐富的設定選項
-- 自訂鍵盤快捷鍵（智能按鍵捕捉）
-- 調整歷史記錄數量限制
-- 視窗透明度即時預覽
-- 開發者工具開關（開發模式）
+### ⚙️ Rich Settings Options
+- Custom keyboard shortcuts (smart key capture)
+- Adjust history record limit
+- Window opacity real-time preview
+- Developer tools toggle (development mode)
 
-### 📜 歷史記錄管理
-- 虛擬滾動優化，支援大量歷史記錄
-- 點擊歷史項目快速重新載入
-- 一鍵清空所有歷史
-- 顯示錄音時間和語言標籤
+### 📜 History Management
+- Virtual scrolling optimization, supports large history
+- Click history items to quickly reload
+- One-click clear all history
+- Display recording time and language tags
 
-### 🚀 效能優化
-- 記憶體使用優化（< 100MB 閒置）
-- 音訊處理效能優化
-- 設定變更防抖動
-- 自動資源清理
+### 🚀 Performance Optimization
+- Memory usage optimization (< 100MB idle)
+- Audio processing performance optimization
+- Settings change debouncing
+- Automatic resource cleanup
 
-## 🎮 使用方法
+## 🎮 How to Use
 
-### 快速開始
-1. 下載並安裝 VoiceInput
-2. 取得 OpenAI API 金鑰
-3. 在設定中輸入 API 金鑰
-4. 開始錄音！
+### Quick Start
+1. Download and install VoiceInput
+2. Get OpenAI API key
+3. Enter API key in settings
+4. Start recording!
 
-### 快捷鍵
-- `Cmd+Shift+R` - 開始錄音
-- `Cmd+Shift+S` - 停止錄音
-- 可在設定中自訂
+### Keyboard Shortcuts
+- `Cmd+Shift+R` - Start recording
+- `Cmd+Shift+S` - Stop recording
+- Customizable in settings
 
-## 📋 系統需求
+## 📋 System Requirements
 
-- **作業系統**: macOS 10.15 (Catalina) 或更新版本
-- **處理器**: Intel 或 Apple Silicon (M1/M2/M3)
-- **記憶體**: 至少 4GB RAM
-- **網路**: 需要網路連線（OpenAI API）
-- **其他**: 麥克風、OpenAI API 金鑰
+- **OS**: macOS 10.15 (Catalina) or later
+- **Processor**: Intel or Apple Silicon (M1/M2/M3)
+- **Memory**: At least 4GB RAM
+- **Network**: Internet connection required (OpenAI API)
+- **Other**: Microphone, OpenAI API key
 
-## 💰 費用說明
+## 💰 Pricing
 
-- VoiceInput 應用程式完全免費
-- 需要支付 OpenAI Whisper API 使用費：每分鐘 $0.006
-- 例如：100 分鐘轉錄 ≈ $0.60
+- VoiceInput app is completely free
+- OpenAI Whisper API usage fee: $0.006 per minute
+- Example: 100 minutes transcription ≈ $0.60
 
-## 📥 下載
+## 📥 Download
 
-### 推薦：DMG 安裝檔（Universal 版本）
+### Recommended: DMG Installer (Universal Version)
 - **VoiceInput-1.0.0-universal.dmg** (169MB)
-- 同時支援 Intel 和 Apple Silicon Mac
-- 雙擊安裝，拖曳到 Applications 資料夾
+- Supports both Intel and Apple Silicon Mac
+- Double-click to install, drag to Applications folder
 
-### 備選：ZIP 壓縮檔（Universal 版本）
+### Alternative: ZIP Archive (Universal Version)
 - **VoiceInput-1.0.0-universal-mac.zip** (163MB)
-- 同時支援 Intel 和 Apple Silicon Mac
-- 解壓後移動到 Applications 資料夾
+- Supports both Intel and Apple Silicon Mac
+- Extract and move to Applications folder
 
-## 🔧 技術規格
+### ⚠️ Important: First-Time Opening Instructions
 
-- **框架**: Electron 28.3.3
-- **前端**: React 18 + TypeScript
-- **樣式**: Tailwind CSS
-- **建置工具**: Vite
+macOS will show a security warning - this is normal!
+
+**Solution:**
+1. **Right-click** on VoiceInput.app
+2. Select "**Open**"
+3. Click "**Open**" in the confirmation dialog
+
+**Detailed guide:** [SECURITY_WARNING_SOLUTION.md](https://github.com/gsn943314/voice-input-assistant/blob/main/SECURITY_WARNING_SOLUTION.md)
+
+## 🔧 Technical Specifications
+
+- **Framework**: Electron 28.3.3
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
 - **API**: OpenAI Whisper
-- **儲存**: electron-store
-- **架構**: Universal (Intel + Apple Silicon)
+- **Storage**: electron-store
+- **Architecture**: Universal (Intel + Apple Silicon)
 
-## 🐛 已知問題
+## 🐛 Known Issues
 
-- 首次啟動可能需要授予麥克風權限
-- 某些 macOS 版本的視窗透明度效果可能有限
-- 長時間錄音（>5分鐘）可能影響轉錄準確度
+- **macOS security warning on first launch** (normal, use right-click to open)
+- First launch may require microphone permission
+- Some macOS versions may have limited window transparency effects
+- Long recordings (>5 minutes) may affect transcription accuracy
 
-## 🔄 未來計劃
+## 🔄 Future Plans
 
-- [ ] 支援更多語言
-- [ ] 即時轉錄功能
-- [ ] 自訂 Whisper 模型選擇
-- [ ] 雲端同步歷史記錄
-- [ ] macOS Shortcuts 整合
-- [ ] 批次檔案轉錄
+- [ ] Support for more languages
+- [ ] Real-time transcription
+- [ ] Custom Whisper model selection
+- [ ] Cloud sync for history
+- [ ] macOS Shortcuts integration
+- [ ] Batch file transcription
 
-## 🙏 致謝
+## 🙏 Acknowledgments
 
-感謝以下開源專案：
+Thanks to the following open source projects:
 - [OpenAI Whisper API](https://openai.com/research/whisper)
 - [Electron](https://www.electronjs.org/)
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
 
-## 📞 支援
+## 📞 Support
 
-- 🐛 [回報問題](https://github.com/YOUR_USERNAME/voice-input-assistant/issues)
-- 💡 [功能建議](https://github.com/YOUR_USERNAME/voice-input-assistant/issues/new?labels=enhancement)
-- 📖 [完整文件](https://github.com/YOUR_USERNAME/voice-input-assistant)
+- 🐛 [Report Issue](https://github.com/gsn943314/voice-input-assistant/issues)
+- 💡 [Feature Request](https://github.com/gsn943314/voice-input-assistant/issues/new?labels=enhancement)
+- 📖 [Full Documentation](https://github.com/gsn943314/voice-input-assistant)
 
-## 📄 授權
+## 📄 License
 
-本專案採用 MIT 授權條款。
+This project is licensed under the MIT License.
 
 ---
 
-**享受語音轉文字的便利！** 🎤✨
+**Enjoy the convenience of voice-to-text!** 🎤✨
 
-如果你覺得 VoiceInput 有用，請給我們一個 ⭐ Star！
+If you find VoiceInput useful, please give us a ⭐ Star!
