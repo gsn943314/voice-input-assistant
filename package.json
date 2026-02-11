@@ -45,7 +45,16 @@
     "productName": "VoiceInput",
     "mac": {
       "category": "public.app-category.productivity",
-      "target": ["dmg", "zip"]
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["universal"]
+        },
+        {
+          "target": "zip",
+          "arch": ["universal"]
+        }
+      ]
     },
     "files": [
       "dist/**/*",
