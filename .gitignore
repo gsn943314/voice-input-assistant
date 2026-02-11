@@ -28,3 +28,14 @@ yarn-error.log*
 
 # Electron
 out/
+
+# Kiro specs and development files
+.kiro/
+
+# Development logs and internal docs
+*SUMMARY*.md
+*REPORT*.md
+*INDEX*.md
+debug-*.html
+test-*.html
+check-*.sh
